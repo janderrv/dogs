@@ -26,6 +26,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
     autoLogin();
@@ -49,7 +51,7 @@ export const UserStorage = ({ children }) => {
       const { token } = await tokenRes.json();
       window.localStorage.setItem('token', token);
       await getUser(token);
-      <Navigate to="/conta"/>
+      <Navigate to="/conta" />;
     } catch (err) {
       setError(err.message);
       setLogin(false);
@@ -64,7 +66,7 @@ export const UserStorage = ({ children }) => {
     setLoading(false);
     setLogin(false);
     window.localStorage.removeItem('token');
-    <Navigate to="/login"/>
+    <Navigate to="/login" />;
   }
 
   return (
