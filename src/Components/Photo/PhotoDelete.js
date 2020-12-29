@@ -1,5 +1,5 @@
 import React from 'react';
-import { PHOTO_DELETE } from '../../Api.js';
+import { PHOTO_DELETE } from '../../api.js';
 import useFetch from '../../Hooks/useFetch';
 import styles from './PhotoDelete.module.css';
 
