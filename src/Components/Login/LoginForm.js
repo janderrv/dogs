@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useForm from '../../Hooks/useForm';
-import Button from '../Forms/Button';
 import Input from '../Forms/Input';
-import Error from '../Helper/Error';
+import Button from '../Forms/Button';
+import useForm from '../../Hooks/useForm';
 import { UserContext } from '../../UserContext';
+import Error from '../Helper/Error';
 import styles from './LoginForm.module.css';
 import stylesBtn from '../Forms/Button.module.css';
 
@@ -16,6 +16,7 @@ const LoginForm = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
+
     if (username.validate() && password.validate()) {
       userLogin(username.value, password.value);
     }
@@ -35,7 +36,7 @@ const LoginForm = () => {
         <Error error={error} />
       </form>
       <Link className={styles.perdeu} to="/login/perdeu">
-        Perdeu a senha?
+        Perdeu a Senha?
       </Link>
       <div className={styles.cadastro}>
         <h2 className={styles.subtitle}>Cadastre-se</h2>

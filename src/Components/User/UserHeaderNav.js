@@ -14,7 +14,6 @@ const UserHeaderNav = () => {
   const [mobileMenu, setMobileMenu] = React.useState(false);
 
   const { pathname } = useLocation();
-
   React.useEffect(() => {
     setMobileMenu(false);
   }, [pathname]);
@@ -30,6 +29,7 @@ const UserHeaderNav = () => {
           onClick={() => setMobileMenu(!mobileMenu)}
         ></button>
       )}
+
       <nav
         className={`${mobile ? styles.navMobile : styles.nav} ${
           mobileMenu && styles.navMobileActive
